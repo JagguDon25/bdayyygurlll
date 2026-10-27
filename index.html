@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Happy Birthday, Neharika 🎂</title>
+<meta name="theme-color" content="#0f0a21">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎂%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@400;700;800&family=Gochi+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="0">
+<audio id="bgm" loop preload="none"></audio>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<nav id="dots" aria-label="Progress"></nav>
+<button id="mute" aria-label="Sound on" title="Sound">♪</button>
+
+<main id="app">
+
+  <!-- 1 · lights -->
+  <section class="page p1 active" id="p1" aria-label="Lights">
+    <div class="dark-layer">
+      <div class="stars" id="stars" aria-hidden="true"></div>
+      <p class="whisper">psst… <span data-name>Neharika</span>?</p>
+      <p class="whisper two">it's a little dark in here</p>
+      <div class="switch-wrap">
+        <div class="hint" aria-hidden="true">
+          <span>flip me!</span>
+          <svg width="86" height="64" viewBox="0 0 86 64" fill="none" stroke="#ffd27a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6 C 34 0, 66 18, 76 50"/><path d="M64 42 L76 52 L80 36"/></svg>
+        </div>
+        <button class="switch" id="lightSwitch" aria-label="Turn the lights on">
+          <span class="plate"></span><span class="slot"></span>
+          <span class="rocker">
+            <i class="eye l"></i><i class="eye r"></i><i class="cheek l"></i><i class="cheek r"></i><i class="mouth"></i>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div class="lit-layer" id="litLayer">
+      <svg class="bunting" id="bunting" aria-hidden="true"></svg>
+      <span class="spark" style="left:12%;top:26%;animation-delay:.2s" aria-hidden="true">✦</span>
+      <span class="spark" style="right:10%;top:22%;animation-delay:1s;font-size:1.2rem" aria-hidden="true">✦</span>
+      <span class="spark" style="left:8%;bottom:20%;animation-delay:1.6s;font-size:1.1rem" aria-hidden="true">✦</span>
+      <span class="spark" style="right:14%;bottom:24%;animation-delay:.6s" aria-hidden="true">✦</span>
+      <div class="hb">
+        <p class="hb-top rise" style="--i:0">Happy Birthday</p>
+        <h1 class="hb-name rise" style="--i:1"><span data-name>Neharika</span>!</h1>
+        <p class="hb-wish rise" style="--i:2">Wishing you a day as sweet, sparkly and wonderful as you are.</p>
+        <p class="hb-ps rise" style="--i:3">I made you something. Come on in!</p>
+        <button class="btn rise" style="--i:4" data-next>Go cut the cake</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · cake -->
+  <section class="page p2" id="p2" aria-label="Cake">
+    <div class="inner">
+      <h2 class="title" id="cakeTitle">Make a wish</h2>
+      <p class="sub" id="cakeMsg">Take a deep breath, then blow out the candles.</p>
+      <div class="cake-stage">
+        <svg id="cake" viewBox="0 -60 360 410" role="img" aria-label="A strawberry birthday cake with three candles">
+          <defs>
+            <clipPath id="clipMain"><rect x="-10" y="-80" width="240" height="440"/></clipPath>
+            <clipPath id="clipSlice"><rect x="230" y="-80" width="140" height="440"/></clipPath>
+            <radialGradient id="gGlow"><stop offset="0" stop-color="#ffd54a" stop-opacity=".7"/><stop offset="1" stop-color="#ffd54a" stop-opacity="0"/></radialGradient>
+            <linearGradient id="gFlame" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff9f43"/><stop offset=".55" stop-color="#ffd54a"/><stop offset="1" stop-color="#fffbd6"/></linearGradient>
+            <linearGradient id="gSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f1e0d4"/><stop offset=".22" stop-color="#fffaf4"/><stop offset=".65" stop-color="#fff7ef"/><stop offset="1" stop-color="#efdccf"/></linearGradient>
+            <linearGradient id="gGapShade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5a2a1a" stop-opacity=".3"/><stop offset=".4" stop-color="#5a2a1a" stop-opacity="0"/></linearGradient>
+
+            <g id="berry">
+              <path d="M0,12 C-14,4 -14,-10 -6,-11 C-3,-12 0,-10 0,-10 C0,-10 3,-12 6,-11 C14,-10 14,4 0,12 Z" fill="#ff4d6d"/>
+              <path d="M-7,-11 L0,-5 L7,-11 L0,-16 Z" fill="#62c370"/>
+              <g fill="#fff" opacity=".85"><ellipse cx="-5" cy="-1" rx="1.1" ry="1.7"/><ellipse cx="1" cy="3" rx="1.1" ry="1.7"/><ellipse cx="5" cy="-2" rx="1.1" ry="1.7"/><ellipse cx="-1" cy="-4" rx="1.1" ry="1.7"/></g>
+            </g>
+            <g id="dollop"><path d="M-11,0 C-13,-7 -6,-9 -5,-13 C-3,-19 3,-19 4,-13 C6,-9 12,-7 11,0 Z" fill="#fff" stroke="#ffd0e2" stroke-width="1.5" stroke-linejoin="round"/></g>
+
+            <g id="cakeArt">
+              <rect x="60" y="140" width="240" height="148" rx="16" fill="url(#gSide)"/>
+              <rect x="60" y="250" width="240" height="13" fill="#d9ccff"/>
+              <g id="bandDots" fill="#fff" opacity=".9"></g>
+              <g id="pearls" fill="#ffc2da"></g>
+              <g id="sprinkles"></g>
+              <text id="cakeName" x="142" y="232" text-anchor="middle" font-family="'Gochi Hand','Bradley Hand',cursive" font-size="34" fill="#ff5f93">Neharika</text>
+              <path transform="translate(209,222) scale(.95)" d="M0,8 C-14,-2 -8,-14 0,-6 C8,-14 14,-2 0,8Z" fill="#ff8fb8"/>
+              <g fill="#ff8fb8">
+                <rect x="52" y="126" width="256" height="34" rx="17"/>
+                <rect x="76" y="140" width="18" height="46" rx="9"/>
+                <rect x="112" y="140" width="16" height="30" rx="8"/>
+                <rect x="146" y="140" width="20" height="56" rx="10"/>
+                <rect x="184" y="140" width="16" height="34" rx="8"/>
+                <rect x="206" y="140" width="14" height="24" rx="7"/>
+                <rect x="244" y="140" width="18" height="48" rx="9"/>
+                <rect x="272" y="140" width="16" height="32" rx="8"/>
+                <rect x="292" y="140" width="14" height="22" rx="7"/>
+              </g>
+              <ellipse cx="180" cy="126" rx="124" ry="12" fill="#ffb9d3"/>
+              <rect x="70" y="131" width="26" height="5" rx="2.5" fill="#fff" opacity=".45"/>
+              <rect x="146" y="150" width="5" height="20" rx="2.5" fill="#fff" opacity=".35"/>
+              <use href="#dollop" x="84" y="124"/>
+              <use href="#berry" x="140" y="120"/>
+              <use href="#berry" x="180" y="120"/>
+              <use href="#dollop" x="218" y="124"/>
+              <use href="#berry" x="252" y="119"/>
+              <use href="#dollop" x="284" y="124"/>
+            </g>
+          </defs>
+
+          <!-- plate -->
+          <ellipse cx="180" cy="300" rx="166" ry="26" fill="#ffc6dc" opacity=".5"/>
+          <ellipse cx="180" cy="292" rx="160" ry="24" fill="#fff" stroke="#ffc6dc" stroke-width="3"/>
+          <ellipse cx="180" cy="291" rx="128" ry="16" fill="#ffeef5"/>
+
+          <!-- cake -->
+          <use id="useFull" href="#cakeArt"/>
+          <use id="useMain" href="#cakeArt" clip-path="url(#clipMain)"/>
+
+          <!-- inside of the cake, shown after the slice is gone -->
+          <g id="gap">
+            <rect x="230" y="126" width="70" height="162" fill="#f0bf85"/>
+            <rect x="230" y="126" width="70" height="17" fill="#ff8fb8"/>
+            <rect x="230" y="143" width="70" height="43" fill="#ffe0a6"/>
+            <rect x="230" y="186" width="70" height="10" fill="#fffaf3"/>
+            <rect x="230" y="196" width="70" height="4" fill="#ff7aa6"/>
+            <rect x="230" y="200" width="70" height="46" fill="#ffe0a6"/>
+            <rect x="230" y="246" width="70" height="10" fill="#fffaf3"/>
+            <rect x="230" y="256" width="70" height="4" fill="#ff7aa6"/>
+            <rect x="230" y="260" width="70" height="28" fill="#ffd591"/>
+            <rect x="230" y="126" width="70" height="162" fill="url(#gGapShade)"/>
+          </g>
+          <use id="useSlice" href="#cakeArt" clip-path="url(#clipSlice)"/>
+
+          <!-- candles -->
+          <g id="candles">
+            <g transform="translate(120 0)"><g class="candle">
+              <rect x="-4.5" y="88" width="9" height="40" rx="3" fill="#fff" stroke="#ffb3d0"/>
+              <path d="M-4.5,98 l9,-4 M-4.5,108 l9,-4 M-4.5,118 l9,-4" stroke="#ff8fb8" stroke-width="2.6"/>
+              <ellipse class="glow" cx="0" cy="74" rx="17" ry="21" fill="url(#gGlow)"/>
+              <path class="flame" d="M0,86 C-7,78 -6,68 0,57 C6,68 7,78 0,86Z" fill="url(#gFlame)"/>
+              <circle class="puff" cx="0" cy="62" r="4" style="--i:0"/><circle class="puff" cx="3" cy="60" r="3" style="--i:2"/>
+            </g></g>
+            <g transform="translate(160 0)"><g class="candle">
+              <rect x="-4.5" y="88" width="9" height="40" rx="3" fill="#fff" stroke="#cbb8ff"/>
+              <path d="M-4.5,98 l9,-4 M-4.5,108 l9,-4 M-4.5,118 l9,-4" stroke="#b79cff" stroke-width="2.6"/>
+              <ellipse class="glow" cx="0" cy="74" rx="17" ry="21" fill="url(#gGlow)"/>
+              <path class="flame" style="animation-delay:-.07s" d="M0,86 C-7,78 -6,68 0,57 C6,68 7,78 0,86Z" fill="url(#gFlame)"/>
+              <circle class="puff" cx="0" cy="62" r="4" style="--i:1"/><circle class="puff" cx="-3" cy="60" r="3" style="--i:3"/>
+            </g></g>
+            <g transform="translate(200 0)"><g class="candle">
+              <rect x="-4.5" y="88" width="9" height="40" rx="3" fill="#fff" stroke="#a9e3c6"/>
+              <path d="M-4.5,98 l9,-4 M-4.5,108 l9,-4 M-4.5,118 l9,-4" stroke="#7fd3a8" stroke-width="2.6"/>
+              <ellipse class="glow" cx="0" cy="74" rx="17" ry="21" fill="url(#gGlow)"/>
+              <path class="flame" style="animation-delay:-.12s" d="M0,86 C-7,78 -6,68 0,57 C6,68 7,78 0,86Z" fill="url(#gFlame)"/>
+              <circle class="puff" cx="0" cy="62" r="4" style="--i:2"/><circle class="puff" cx="2" cy="60" r="3" style="--i:4"/>
+            </g></g>
+          </g>
+
+          <line id="cutLine" x1="230" y1="116" x2="230" y2="116"/>
+
+          <!-- the slice, on its own little plate -->
+          <g transform="translate(288 306)">
+            <g id="sliceIcon">
+              <ellipse cx="0" cy="0" rx="48" ry="10" fill="#fff" stroke="#ffc6dc" stroke-width="3"/>
+              <g transform="translate(-32 -70)">
+                <rect x="0" y="12" width="64" height="62" rx="4" fill="#ffe0a6"/>
+                <rect x="0" y="32" width="64" height="7" fill="#fffaf3"/>
+                <rect x="0" y="39" width="64" height="3" fill="#ff7aa6"/>
+                <rect x="0" y="54" width="64" height="7" fill="#fffaf3"/>
+                <rect x="0" y="61" width="64" height="3" fill="#ff7aa6"/>
+                <path d="M0,12 L32,-8 L64,12 Z" fill="#ffb9d3"/>
+                <g fill="#ff8fb8"><rect x="0" y="12" width="64" height="10" rx="3"/><rect x="8" y="18" width="10" height="15" rx="5"/><rect x="30" y="18" width="10" height="10" rx="5"/><rect x="48" y="18" width="10" height="18" rx="5"/></g>
+                <g transform="translate(32 -3) scale(.95)"><use href="#berry"/></g>
+                <rect x="-4" y="-14" width="72" height="92" fill="transparent"/>
+              </g>
+            </g>
+          </g>
+
+          <!-- the knife -->
+          <g id="knifeWrap"><g id="knifePos" transform="translate(230 92)"><g id="knife" tabindex="-1">
+            <g class="knife-bob">
+              <path d="M-8,-100 H8 V-12 Q8,-5 0,0 Q-8,-5 -8,-12 Z" fill="#f6f7fc" stroke="#b7b0d6" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M-3.5,-96 V-16" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".9"/>
+              <rect x="-12" y="-106" width="24" height="8" rx="3" fill="#ffc93c"/>
+              <rect x="-7.5" y="-146" width="15" height="42" rx="7.5" fill="#ff5f93"/>
+              <path transform="translate(0 -126) scale(.55)" d="M0,8 C-14,-2 -8,-14 0,-6 C8,-14 14,-2 0,8Z" fill="#fff"/>
+            </g>
+            <rect x="-26" y="-150" width="52" height="160" fill="transparent"/>
+          </g></g></g>
+        </svg>
+      </div>
+      <div class="actions">
+        <button class="btn" id="blowBtn">Blow out the candles</button>
+        <button class="btn ghost small" id="autoCut" hidden>Tap to cut instead</button>
+        <button class="btn" data-next id="cakeNext" hidden>Pop the balloons</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · balloons -->
+  <section class="page p3" id="p3" aria-label="Balloons">
+    <div class="inner">
+      <h2 class="title">Pop a balloon</h2>
+      <p class="sub">Every one has a wish inside, just for you.</p>
+      <div class="balloons" id="balloons"></div>
+      <div class="wish" id="wish" aria-live="polite">Go on, pick one.</div>
+      <div class="count" id="popCount">0 of 8 popped</div>
+      <div class="actions"><button class="btn" data-next id="balloonNext" hidden>See our memories</button></div>
+    </div>
+  </section>
+
+  <!-- 4 · polaroids -->
+  <section class="page p4" id="p4" aria-label="Memories">
+    <div class="inner">
+      <h2 class="title">Our little memory stack</h2>
+      <p class="sub" id="polaSub">Tap a photo to see the next one.</p>
+      <div class="polas" id="polas"></div>
+      <div class="actions"><button class="btn" data-next id="polaNext" hidden>Why you're my favourite</button></div>
+    </div>
+  </section>
+
+  <!-- 5 · reasons -->
+  <section class="page p5" id="p5" aria-label="Reasons">
+    <div class="inner">
+      <h2 class="title">Why you're my favourite person</h2>
+      <p class="sub">Flip each card.</p>
+      <div class="grid" id="flips"></div>
+      <div class="actions"><button class="btn" data-next id="flipNext" hidden>Open your gift</button></div>
+    </div>
+  </section>
+
+  <!-- 6 · gift -->
+  <section class="page p6" id="p6" aria-label="Gift">
+    <div class="inner">
+      <h2 class="title" id="giftTitle">One more thing…</h2>
+      <p class="sub" id="giftMsg">Tap the gift to open it.</p>
+      <div class="gift-stage gift" id="gift">
+        <div class="coupon" aria-live="polite">
+          <h3 id="giftHead"></h3>
+          <p id="giftBody"></p>
+          <div class="rule"></div>
+          <small id="giftSmall"></small>
+        </div>
+        <button id="giftBtn" aria-label="Open the gift">
+          <svg id="giftSvg" viewBox="0 0 240 230" aria-hidden="true">
+            <ellipse cx="120" cy="218" rx="88" ry="10" fill="rgba(74,43,61,.13)"/>
+            <rect x="38" y="112" width="164" height="102" rx="12" fill="#ff8fb8"/>
+            <g fill="#fff" opacity=".55"><circle cx="62" cy="140" r="5"/><circle cx="84" cy="176" r="5"/><circle cx="66" cy="196" r="4"/><circle cx="176" cy="140" r="5"/><circle cx="158" cy="180" r="5"/><circle cx="178" cy="198" r="4"/></g>
+            <rect x="108" y="112" width="24" height="102" fill="#fff3a0"/>
+            <g id="giftLid">
+              <rect x="28" y="80" width="184" height="40" rx="12" fill="#ff5f93"/>
+              <rect x="108" y="80" width="24" height="40" fill="#ffe066"/>
+              <path d="M120,80 C90,26 52,44 78,70 C88,80 108,82 120,80 Z" fill="#fff3a0" stroke="#f0d55c" stroke-width="2"/>
+              <path d="M120,80 C150,26 188,44 162,70 C152,80 132,82 120,80 Z" fill="#fff3a0" stroke="#f0d55c" stroke-width="2"/>
+              <circle cx="120" cy="80" r="10" fill="#ffe066" stroke="#f0d55c" stroke-width="2"/>
+            </g>
+          </svg>
+        </button>
+      </div>
+      <div class="actions"><button class="btn" data-next id="giftNext" hidden>Read your letter</button></div>
+    </div>
+  </section>
+
+  <!-- 7 · letter -->
+  <section class="page p7" id="p7" aria-label="Letter">
+    <div class="inner">
+      <h2 class="title" id="finalTitle">A letter for you</h2>
+      <p class="sub" id="letterMsg">Tap the envelope.</p>
+      <button class="env" id="env" aria-label="Open the envelope">
+        <svg viewBox="0 -50 300 260" aria-hidden="true">
+          <rect x="10" y="50" width="280" height="150" rx="12" fill="#ffb3cf"/>
+          <polygon points="10,52 10,196 150,118" fill="#ffbfd7"/>
+          <polygon points="290,52 290,196 150,118" fill="#ffbfd7"/>
+          <path d="M10,196 Q10,200 16,200 L284,200 Q290,200 290,196 L150,118 Z" fill="#ffd6e6"/>
+          <text x="150" y="188" text-anchor="middle" font-family="'Gochi Hand','Bradley Hand',cursive" font-size="26" fill="#c2306b">for <tspan data-name>Neharika</tspan></text>
+          <polygon class="flap" points="10,50 290,50 150,140" fill="#ff9cc0" stroke="#ff9cc0" stroke-width="6" stroke-linejoin="round"/>
+          <g class="seal"><circle cx="150" cy="136" r="21" fill="#ff5f93"/><path transform="translate(150 137) scale(1.1)" d="M0,8 C-14,-2 -8,-14 0,-6 C8,-14 14,-2 0,8Z" fill="#fff"/></g>
+        </svg>
+      </button>
+      <div class="letter" id="letter" hidden></div>
+      <div class="actions" id="finale" hidden>
+        <button class="btn" id="celebrate">Celebrate!</button>
+        <button class="btn ghost small" id="replay">Start over</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
