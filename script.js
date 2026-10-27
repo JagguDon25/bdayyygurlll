@@ -39,12 +39,12 @@ const CONFIG = {
   ],
 
   reasons: [
-    'You make ordinary days feel like little adventures.',
-    'You listen. Really listen.',
-    'Your laugh is my favourite sound.',
-    'You show up, every single time.',
+    'As usual merii moti to meri favv.',
+    'Kind of chill gurrlll veryy muchh.',
+    'Aap kuchh cheezinn carryy krr rhii apnee saathh jiskaa use actual mei mereko haii',
+    'My bbg',
     'I can be a total mess around you, and it’s okay.',
-    'You’re kind in a way people remember.'
+    'smtg specialll someone speciall'
   ],
 
   gift: {
